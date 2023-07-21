@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border: 1px solid #333;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+        }
+
+        th {
+            font-size: 20px;
+            background-color: #c5f8e7;
+        }
+
+        td:nth-child(3) {
+            text-align: start;
+        }
+    </style>
+    <title>Eunah's</title>
+</head>
+
+<body>
+    <h1>Welcome My Homepage</h1>
+
+    <table class="data">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Desc</th>
+                <th>Author</th>
+                <th>Create_at</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <!-- 딕셔너리는 키값으로 호출하기!!!! -->
+            <tr>
+                <td>{{ i['id'] }}</td>
+                <td>{{ i['title'] }}</td>
+                <td>{{ i['desc'] }}</td>
+                <td>{{ i['author'] }}</td>
+                <td>{{ i['create_at'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
